@@ -27,6 +27,7 @@ for p in products:
 # 'abc' * 3 = 'abcabcabc'
 
 # 寫到檔案的程式碼 # 改成csv格式
-with open('products.csv', 'w') as f: # 此行只有打開
+with open('products.csv', 'w') as f: # 此行只有打開 # with功能:自動close
 	for p in products:
 		f.write(p[0] + ',' + p[1] + '\n' ) # 此行才是真正的寫入(f.write)
+		# 通常都會跟\n做合併
