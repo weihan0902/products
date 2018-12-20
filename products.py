@@ -7,6 +7,7 @@ while True:
 	if name == 'q':
 		break
 	price = input('請輸入商品價格: ')
+	price = int(price)
 	p = []
 	p.append(name)
 	p.append(price)
@@ -27,7 +28,9 @@ for p in products:
 # 'abc' * 3 = 'abcabcabc'
 
 # 寫到檔案的程式碼 # 改成csv格式
-with open('products.csv', 'w') as f: # 此行只有打開 # with功能:自動close
+# 此行只有打開 # with功能:自動close
+with open('products.csv', 'w', encoding='utf-8') as f:
+	f.write('商品,價格\n') # 加入程式碼來寫欄位 # 寫入跟讀取都牽扯到編碼
 	for p in products:
-		f.write(p[0] + ',' + p[1] + '\n' ) # 此行才是真正的寫入(f.write)
-		# 通常都會跟\n做合併
+		f.write(p[0] + ',' + str(p[1]) + '\n' ) # 此行才是真正的寫入(f.write)
+		# 通常都會跟\n做合併 # str = string 轉換成字串
