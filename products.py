@@ -1,8 +1,9 @@
 # 記帳程式
 # 二維度清單:清單中還有清單
-products = []
+
 # 讀取檔案
 # 增加讀取檔案程式碼
+products = []
 with open('products.csv', 'r', encoding='utf-8') as f:
 	for line in f:
 	# 怎麼跳過商品名稱?
